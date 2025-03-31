@@ -3,6 +3,9 @@ import "./App.css";
 
 function App() {
 
+  // This is the example of useReducer hook which is used to manage state in functional components
+  // But the useReducer syntax used in REDUX is little different from this example.
+
   const initialState = {
     name: "", 
     email: "",
