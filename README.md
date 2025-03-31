@@ -85,8 +85,8 @@ This project is licensed under the **MIT License** 📜
 ## 📞 **Contact**
 
 If you have any questions or suggestions, feel free to reach out:
-📧 Email: your.email@example.com  
-🐦 Twitter: [@yourusername](https://twitter.com/yourusername)  
-📌 GitHub: [yourusername](https://github.com/yourusername)  
+
+📧 Email: gauravmazumdar246@gmail.com  
+📌 GitHub: https://github.com/gauravmazumdar97/ReactJS-learning  
 
 Happy Coding! 💻✨
