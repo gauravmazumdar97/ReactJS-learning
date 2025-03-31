@@ -59,7 +59,7 @@ ReactJS-learning/
 
 ## 🚀 **Tech Stack**
 
-🔹 **Frontend:** React.js, JavaScript, HTML, CSS, TailwindCSS  
+🔹 **Frontend:** React.js, JavaScript, HTML, CSS, Bootstrap  
 🔹 **State Management:** React Hooks (useState, useEffect, useContext, etc.)  
 🔹 **Backend (Optional):** Node.js, Express.js  
 🔹 **API Handling:** Fetch, Axios  
