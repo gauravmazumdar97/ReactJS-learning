@@ -1,16 +1,22 @@
-import { useState, useEffect } from "react";
+import { useEffect, useReducer } from "react";
 import "./App.css";
 
 function App() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const initialState = {
+    name: "", 
+    email: "",
+    message: "",  
+    phone: "",  
+    // address: "",
+    // city: "",
+  }
+
+  function RenderFunction(prevState, nextState) {
+    return {...prevState, ...nextState}
+  }
+
+  const [formData, setFormData] = useReducer(RenderFunction, initialState);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,6 +37,7 @@ function App() {
             <div className="card p-4 shadow-lg" style={{ maxWidth: "500px", width: "100%" }}>
                 <h2 className="text-center mb-4">{formData.name}</h2>
                 <h2 className="text-center mb-4">{formData.email}</h2>
+                <h2 className="text-center mb-4">{formData.phone}</h2>
                 <h2 className="text-center mb-4">{formData.message}</h2>
             </div>
 
@@ -47,7 +54,7 @@ function App() {
               name="name"
               placeholder="Enter your name"
               value={formData.name}
-              onChange={handleChange}
+              onChange={(e) => setFormData({ [e.target.name]: e.target.value })}
               required
             />
           </div>
@@ -61,9 +68,21 @@ function App() {
               name="email"
               placeholder="name@example.com"
               value={formData.email}
-              onChange={handleChange}
-              required
-            />
+              onChange={(e) => setFormData({ [e.target.name]: e.target.value })}
+              required/>
+
+          <div className="mb-3">
+            <label htmlFor="phone" className="form-label fw-bold">Your Phone</label>
+            <input
+              className="form-control"
+              id="phone"
+              name="phone"
+              rows="4"
+              placeholder="Enter your phone..."
+              value={formData.phone}
+              onChange={(e) => setFormData({ [e.target.name]: e.target.value })}
+              required/>
+          </div>
           </div>
 
           <div className="mb-3">
@@ -75,14 +94,11 @@ function App() {
               rows="4"
               placeholder="Enter your message..."
               value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
+              onChange={(e) => setFormData({ [e.target.name]: e.target.value })}
+              required/>
           </div>
-
-          <button type="submit" className="btn btn-primary w-100 fw-bold">
-            Submit
-          </button>
+          
+          <button type="submit" className="btn btn-primary w-100 fw-bold">Submit</button>
         </form>
       </div>
     </div>

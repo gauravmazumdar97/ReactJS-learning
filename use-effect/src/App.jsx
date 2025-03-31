@@ -2,11 +2,19 @@ import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
+
+  //  The probem in useState object destructure is object key can be lost 
+      // const [user, setUser] = useState({ name: 'Alice', age: 25 });
+      // // Incorrect update
+      // setUser({ name: 'Bob' });
+      // console.log(user); // { name: 'Bob' } - `age` is lost! 
+  // Additionally we need keep in mind that we have to destructure the previous state always and then pass the new object.
+  // That's why useReducer hook is more suitable for complex state management.
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: "",
-  });
+    message: "", });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

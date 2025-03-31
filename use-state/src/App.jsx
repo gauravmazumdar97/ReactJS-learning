@@ -4,6 +4,10 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
+
+  // In useState we have to define the function for the each field of the state object which causes code duplication
+  // We can avoid this by using the object destructuring and the spread operator like done USEEFFECT example .
+
   const [count, setCount] = useState(0);
   const [addition, setAddition] = useState(0);
   const [subtraction, setSubtraction] = useState(100);
