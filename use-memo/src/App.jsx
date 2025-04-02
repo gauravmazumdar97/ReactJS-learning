@@ -1,6 +1,10 @@
 import { useState, useMemo } from "react";
 
 function App() {
+
+  // This is the example of useMemo Hook for optimizing expensive calculations.
+  // This helps to prevent unnecessary re-renders of the component. It only re-calculates when the dependency changes.
+
   const [count, setCount] = useState(1);
 
   function handleIncrease() {
@@ -17,8 +21,12 @@ function App() {
   }
 
   // Memoize the expensive calculation
-  const sum1000 = useMemo(()=> sumUpTo(1000), []);
-  const sum100000 = useMemo(()=> sumUpTo(100000), []);
+  console.time('Test');
+  
+  const sum1000 = sumUpTo(1000);
+  const sum100000 = sumUpTo(100000);
+  
+  console.timeLog('Test');
 
   return (
     <div className="container mt-4">
