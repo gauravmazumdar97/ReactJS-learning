@@ -1,46 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useCallback } from 'react';
+import './App.css';
+import Child from './Child';
 
 function App() {
-  const [count, setCount] = useState(0)
-console.log("This is the App component=============>>>");
+  const [count, setCount] = useState(0);
+
+  // ✅ Correctly memoized function using functional updates
+  const IncrementCount = useCallback(() => {
+    setCount(prevCount => prevCount + 1);
+  }, []); 
 
   return (
     <>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={IncrementCount}>
           count is {count}
         </button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
-      <Child/>
+      <Child IncrementCount={IncrementCount} />
     </>
-  )
+  );
 }
 
-function Child() {
-  const [count, setCount] = useState(0)
-console.log("This is the Child component=============>>>");
-
-  return (
-    <>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
-export default App
+export default App;

@@ -1,16 +1,14 @@
-import {useState} from 'react'
+import { memo } from "react";
 
-function Child() {
-
-  const [count, setCount] = useState(0);
-
+function Child({ IncrementCount }) {
+  console.log("This is the Child component=============>>>");
 
   return (
     <div>
-        <p>Child Component</p>
-        <button onClick={() => setCount((count) => count + 1)}>This button is from Child</button>
+      <p>Child Component</p>
+      <button onClick={IncrementCount}>This button is from Child</button>
     </div>
-  )
+  );
 }
 
-export default Child
+export default memo(Child);
