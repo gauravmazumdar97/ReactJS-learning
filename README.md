@@ -23,7 +23,7 @@ To run this project locally, follow these steps:
 
 ```bash
 # Clone the repository
-$ git clone https://github.com/yourusername/ReactJS-learning.git
+$ git clone https://github.com/gauravmazumdar97/ReactJS-learning.git
 
 # Navigate to the project directory
 $ cd ReactJS-learning
